@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="container"></div>
+    <script>
+
+        function randomInteger(min, max) {
+            let rand = min - 0.5 + Math.random() * (max - min + 1);
+            return Math.round(rand);
+        }
+
+        container.style.display = 'flex';
+        container.style.flexWrap = 'wrap';
+
+        for (let i = 0; i < 200; i++) {
+            let newBlock = document.createElement('DIV')
+            newBlock.style = 'width: 150px; height: 75px; margin: 20px; border-radius: 10px';
+
+            let r_color_ited = randomInteger(0, 255);
+            let g_color_ited = randomInteger(0, 255);
+            let b_color_ited = randomInteger(0, 255);
+
+            newBlock.style.backgroundColor = `rgb(${r_color_ited}, ${g_color_ited}, ${b_color_ited})`; console.log(newBlock)
+            container.appendChild(newBlock)
+        }
+    </script>
+</body>
+
+
+</html>
